@@ -1,7 +1,13 @@
 class MemosController < ApplicationController
+  before_action :set_memo, only: %i[ show ]
+
   # GET /memos
   def index
     @memos = Memo.all
+  end
+
+  # GET /memos/1
+  def show
   end
 
   # GET /memos/new
@@ -20,6 +26,10 @@ class MemosController < ApplicationController
   end
 
   private
+    def set_memo
+      @memo = Memo.find(params[:id])
+    end
+
     def memo_params
       params.require(:memo).permit(:title, :content)
     end
