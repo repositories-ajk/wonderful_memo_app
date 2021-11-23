@@ -1,5 +1,5 @@
 class MemosController < ApplicationController
-  before_action :set_memo, only: %i[ show ]
+  before_action :set_memo, only: %i[ show edit update ]
 
   # GET /memos
   def index
@@ -15,6 +15,10 @@ class MemosController < ApplicationController
     @memo = Memo.new
   end
 
+  # GET /memos/1/edit
+  def edit
+  end
+
   # POST /memos
   def create
     @memo = Memo.new(memo_params)
@@ -22,6 +26,15 @@ class MemosController < ApplicationController
       redirect_to @memo, notice: "Memo was successfully created."
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  # PATCH/PUT /memos/1
+  def update
+    if @memo.update(memo_params)
+      redirect_to @memo, notice: "Memo was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

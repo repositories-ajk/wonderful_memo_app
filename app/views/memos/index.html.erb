@@ -17,6 +17,7 @@
         <td><%= memo.title %></td>
         <td><%= memo.content %></td>
         <td><%= link_to 'Show', memo %></td>
+        <td><%= link_to 'Edit', edit_memo_path(memo) %></td>
       </tr>
     <% end %>
   </tbody>
