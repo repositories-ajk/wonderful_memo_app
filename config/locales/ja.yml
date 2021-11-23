@@ -1,6 +1,9 @@
 ja:
- activerecord:
-  attributes:
-   sample_memo:
-     title: タイトル
-     content: 内容
+  activerecord:
+    attributes:
+      sample_memo:
+        title: タイトル
+        content: 内容
+      memo:
+        title: タイトル
+        content: 内容
