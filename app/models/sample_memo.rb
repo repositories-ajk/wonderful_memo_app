@@ -1,2 +1,0 @@
-class SampleMemo < ApplicationRecord
-end

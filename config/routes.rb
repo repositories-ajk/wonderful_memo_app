@@ -3,6 +3,5 @@ Rails.application.routes.draw do
   get '/mypage', to: 'mypage#index'
   devise_for :users
   resources :memos
-  resources :sample_memos
 
 end
