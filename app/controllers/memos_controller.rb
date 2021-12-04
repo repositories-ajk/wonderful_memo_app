@@ -1,4 +1,5 @@
 class MemosController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[ index show ]
   before_action :set_memo, only: %i[ show edit update destroy ]
 
   # GET /memos
@@ -21,7 +22,7 @@ class MemosController < ApplicationController
 
   # POST /memos
   def create
-    @memo = Memo.new(memo_params)
+    @memo = current_user.memos.new(memo_params)
     if @memo.save
       redirect_to @memo, notice: "Memo was successfully created."
     else
@@ -46,7 +47,7 @@ class MemosController < ApplicationController
 
   private
     def set_memo
-      @memo = Memo.find(params[:id])
+      @memo = current_user.memos.find(params[:id])
     end
 
     def memo_params
