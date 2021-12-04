@@ -4,7 +4,7 @@ class MemosController < ApplicationController
 
   # GET /memos
   def index
-    @memos = Memo.all
+    @memos = Memo.all.page params[:page]
   end
 
   # GET /memos/1

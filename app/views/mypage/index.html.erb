@@ -2,8 +2,8 @@
 
 <h1>マイページ</h1>
 
+<%= paginate @memos %>
 <%= link_to 'New Memo', new_memo_path, class: "btn btn-info" %>
-
 <table class="table">
   <thead>
     <tr>
