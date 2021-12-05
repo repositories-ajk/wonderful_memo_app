@@ -28,7 +28,12 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>
+        <td>
+          <%= article.title %>
+          <% article.tags.each do |tag| %>
+            <span class="badge rounded-pill bg-primary"><%= tag.name%></span>
+          <% end %>
+        </td>
         <td><%= article.content %></td>
         <td>
           <%= link_to 'Show', article, class: "btn btn-success" %>
