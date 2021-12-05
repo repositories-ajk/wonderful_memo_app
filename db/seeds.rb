@@ -1,3 +1,6 @@
+tags = %w(学習 転職活動 豆知識 その他)
+tags.each { |tag| Tag.find_or_create_by!(name: tag) }
+
 3.times do |i|
   i += 1
   user = User.find_or_create_by!(email: "user00#{i}@test.com") do |_user|
@@ -11,6 +14,3 @@
     end
   end
 end
-
-tags = %w(学習 転職活動 豆知識 その他)
-tags.each { |tag| Tag.find_or_create_by!(name: tag) }
