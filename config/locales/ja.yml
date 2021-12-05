@@ -1,10 +1,10 @@
 ja:
   activerecord:
     attributes:
-      sample_memo:
+      sample_article:
         title: タイトル
         content: 内容
-      memo:
+      article:
         title: タイトル
         content: 内容
   views:

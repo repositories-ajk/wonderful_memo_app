@@ -1,5 +1,5 @@
 {
-  "name": "wonderful_memo_app",
+  "name": "wonderful_post_app",
   "private": true,
   "dependencies": {
     "@popperjs/core": "^2.10.2",

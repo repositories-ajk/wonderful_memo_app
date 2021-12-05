@@ -16,8 +16,8 @@
   </div>
 <% end %>
 
-<%= paginate @memos %>
-<%= link_to 'New Memo', new_memo_path, class: "btn btn-info" %>
+<%= paginate @articles %>
+<%= link_to 'New Article', new_article_path, class: "btn btn-info" %>
 <table class="table">
   <thead>
     <tr>
@@ -26,14 +26,14 @@
     </tr>
   </thead>
   <tbody>
-    <% @memos.each do |memo| %>
+    <% @articles.each do |article| %>
       <tr>
-        <td><%= memo.title %></td>
-        <td><%= memo.content %></td>
+        <td><%= article.title %></td>
+        <td><%= article.content %></td>
         <td>
-          <%= link_to 'Show', memo, class: "btn btn-success" %>
-          <%= link_to 'Edit', edit_memo_path(memo), class: "btn btn-warning" %>
-          <%= link_to 'Destroy', memo, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Show', article, class: "btn btn-success" %>
+          <%= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %>
+          <%= link_to 'Destroy', article, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>

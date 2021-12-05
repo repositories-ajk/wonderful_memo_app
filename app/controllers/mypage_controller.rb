@@ -1,12 +1,12 @@
 class MypageController < ApplicationController
   # GET /mypage
   def index
-    memos = current_user.memos
+    articles = current_user.articles
 
     if params[:title].present?
-      memos = memos.where("title LIKE ?", "%#{params[:title]}%")
+      articles = articles.where("title LIKE ?", "%#{params[:title]}%")
     end
 
-    @memos = memos.page params[:page]
+    @articles = articles.page params[:page]
   end
 end

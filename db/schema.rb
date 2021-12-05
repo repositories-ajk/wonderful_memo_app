@@ -15,20 +15,13 @@ ActiveRecord::Schema.define(version: 2021_12_04_030000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "memos", force: :cascade do |t|
+  create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.index ["user_id"], name: "index_memos_on_user_id"
-  end
-
-  create_table "sample_memos", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,5 +36,5 @@ ActiveRecord::Schema.define(version: 2021_12_04_030000) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "memos", "users"
+  add_foreign_key "articles", "users"
 end

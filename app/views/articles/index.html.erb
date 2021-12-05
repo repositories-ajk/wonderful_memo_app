@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Memos</h1>
-<%= form_with url: memos_url, method: :get, local: true do |form| %>
+<h1>Articles</h1>
+<%= form_with url: articles_url, method: :get, local: true do |form| %>
   <div class="row justify-content-center">
     <div class="col-6">
       <div class="mb-3">
@@ -14,7 +14,7 @@
     </div>
   </div>
 <% end %>
-<%= paginate @memos %>
+<%= paginate @articles %>
 <table class="table">
   <thead>
     <tr>
@@ -23,10 +23,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @memos.each do |memo| %>
+    <% @articles.each do |article| %>
       <tr>
-        <td><%= memo.title %></td>
-        <td><%= memo.content %></td>
+        <td><%= article.title %></td>
+        <td><%= article.content %></td>
       </tr>
     <% end %>
   </tbody>
