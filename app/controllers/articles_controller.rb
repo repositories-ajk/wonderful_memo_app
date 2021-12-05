@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[ index show ]
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_article, only: %i[ edit update destroy ]
 
   # GET /articles
   def index
@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
+    @article = Article.find(params[:id])
   end
 
   # GET /articles/new
