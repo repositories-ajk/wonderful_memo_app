@@ -4,7 +4,13 @@ class MemosController < ApplicationController
 
   # GET /memos
   def index
-    @memos = Memo.all.page params[:page]
+    memos = Memo.all.page params[:page]
+
+    if params[:title].present?
+      memos = memos.where("title LIKE ?", "%#{params[:title]}%")
+    end
+
+    @memos = memos.page params[:page]
   end
 
   # GET /memos/1
